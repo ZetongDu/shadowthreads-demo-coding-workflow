@@ -1,0 +1,5 @@
+{
+  "change": "strip whitespace",
+  "target": "parser.py",
+  "prompt": "Refactor parse_numbers so it strips whitespace before parsing each token."
+}

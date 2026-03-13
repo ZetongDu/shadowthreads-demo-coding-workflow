@@ -1,0 +1,5 @@
+{
+  "file": "src/parser.py",
+  "state": "baseline",
+  "source": "\"\"\"Baseline parser used by the workflow demo.\"\"\"\n\n\ndef parse_numbers(text):\n    numbers = []\n    for token in text.split(\",\"):\n        normalized = token.strip()\n        if not normalized:\n            continue\n        numbers.append(int(normalized))\n    return numbers\n"
+}

@@ -1,0 +1,24 @@
+{
+  "status": "failure",
+  "command": "python -m unittest discover -s tests -v",
+  "returncode": 1,
+  "failing_test": "test_ignores_empty_tokens",
+  "failure_input": "1, 2, , 4",
+  "error_type": "ValueError",
+  "error_message": "invalid literal for int() with base 10: ''",
+  "summary": "Whitespace-only token was mutated to an empty string in shared parser state, then parsed as an integer.",
+  "output_excerpt": [
+    "test_ignores_empty_tokens (test_parser.ParseNumbersTests.test_ignores_empty_tokens) ... ERROR",
+    "test_parses_normal_input (test_parser.ParseNumbersTests.test_parses_normal_input) ... ok",
+    "test_strips_whitespace (test_parser.ParseNumbersTests.test_strips_whitespace) ... ok",
+    "",
+    "======================================================================",
+    "ERROR: test_ignores_empty_tokens (test_parser.ParseNumbersTests.test_ignores_empty_tokens)",
+    "----------------------------------------------------------------------",
+    "Traceback (most recent call last):",
+    "  File \"C:\\dev\\shadowthreads-demo-coding-workflow\\tests\\test_parser.py\", line 14, in test_ignores_empty_tokens",
+    "    self.assertEqual(parse_numbers(\"1, 2, , 4\"), [1, 2, 4])",
+    "                     ^^^^^^^^^^^^^^^^^^^^^^^^^^",
+    "  File \"C:\\dev\\shadowthreads-demo-coding-workflow\\src\\parser.py\", line 15, in parse_numbers"
+  ]
+}

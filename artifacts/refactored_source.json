@@ -1,0 +1,5 @@
+{
+  "file": "src/parser.py",
+  "state": "post_refactor",
+  "source": "\"\"\"Baseline parser used by the workflow demo.\"\"\"\n\n\ndef _normalize_tokens_in_place(tokens):\n    for index, token in enumerate(tokens):\n        tokens[index] = token.strip()\n        if token == \"\":\n            tokens.pop(index)\n    return tokens\n\n\ndef parse_numbers(text):\n    tokens = text.split(\",\")\n    normalized_tokens = _normalize_tokens_in_place(tokens)\n    return [int(token.strip()) for token in normalized_tokens]\n"
+}

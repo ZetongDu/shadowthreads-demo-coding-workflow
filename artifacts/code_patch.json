@@ -1,0 +1,6 @@
+{
+  "type": "code_patch",
+  "change": "strip whitespace",
+  "target": "parser.py",
+  "diff": "--- src/parser.py\n+++ src/parser.py\n@@ -1,11 +1,15 @@\n \"\"\"Baseline parser used by the workflow demo.\"\"\"\n \n \n+def _normalize_tokens_in_place(tokens):\n+    for index, token in enumerate(tokens):\n+        tokens[index] = token.strip()\n+        if token == \"\":\n+            tokens.pop(index)\n+    return tokens\n+\n+\n def parse_numbers(text):\n-    numbers = []\n-    for token in text.split(\",\"):\n-        normalized = token.strip()\n-        if not normalized:\n-            continue\n-        numbers.append(int(normalized))\n-    return numbers\n+    tokens = text.split(\",\")\n+    normalized_tokens = _normalize_tokens_in_place(tokens)\n+    return [int(token.strip()) for token in normalized_tokens]\n"
+}

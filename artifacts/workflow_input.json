@@ -1,0 +1,5 @@
+{
+  "task": "refactor parser",
+  "source_file": "src/parser.py",
+  "test_command": "python -m unittest discover -s tests -v"
+}
