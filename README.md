@@ -30,4 +30,4 @@ powershell .\demo-record.ps1
 ## Main project
 
 Shadow Threads core repository:
-https://github.com/ZetongDu/shadow-threads
+https://github.com/shadowthreads/shadow-threads
